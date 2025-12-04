@@ -38,7 +38,7 @@ h1, h2, h3 {
 
 
 body {
-    background-image: url("Images/cute-pink-plaid-print-plaid-print-pink-plaid-background-picnic-background-checkered-background_405506-407.avif");
+    background-image: url("images/cute-pink-plaid-print-plaid-print-pink-plaid-background-picnic-background-checkered-background_405506-407.avif");
     background-size: cover;         /* Image always fills the screen */
     background-position: center;    /* Keep the main part centered */
     background-repeat: no-repeat;   /* No repeating tiles */
@@ -238,6 +238,8 @@ header {
   flex: 1;
 }
 
+
+
 .nav-links img {
     width: 35px;
     height: 35px;
@@ -252,69 +254,68 @@ header {
   }
 
 
-
-@media (max-width: 768px) {
-  /* background fixed can feel jumpy on phones */
-  body {
-    background-attachment: scroll;
+  @media (max-width: 768px) {
+    /* background fixed can feel jumpy on phones */
+    body {
+      background-attachment: scroll;
+    }
+  
+    /* navbar: allow wrapping and smaller spacing */
+    .navbar {
+      flex-wrap: wrap;
+      padding: 8px 12px;
+      row-gap: 8px;
+    }
+  
+    .navbar ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .nav-pages a {
+      font-size: 0.9rem;
+      padding: 4px 8px;
+    }
+  
+    .nav-links img {
+      width: 28px;
+      height: 28px;
+    }
+  
+    /* stack content vertically instead of side‑by‑side */
+    .flex-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .text-container {
+      flex: 1 1 auto;
+    }
+  
+    /* images scale nicely on small screens */
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    /* videos: full width on small screens */
+    .video-wrapper {
+      max-width: 100%;
+      min-width: 0;
+    }
+  
+    .video-wrapper video {
+      width: 100%;
+      height: auto;
+    }
+  
+    /* slightly smaller text for phones */
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .text-container p {
+      font-size: 1rem;
+    }
   }
-
-  /* navbar: allow wrapping and smaller spacing */
-  .navbar {
-    flex-wrap: wrap;
-    padding: 8px 12px;
-    row-gap: 8px;
-  }
-
-  .navbar ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .nav-pages a {
-    font-size: 0.9rem;
-    padding: 4px 8px;
-  }
-
-  .nav-links img {
-    width: 28px;
-    height: 28px;
-  }
-
-  /* stack content vertically instead of side‑by‑side */
-  .flex-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .text-container {
-    flex: 1 1 auto;
-  }
-
-  /* images scale nicely on small screens */
-  .image-container img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* videos: full width on small screens */
-  .video-wrapper {
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .video-wrapper video {
-    width: 100%;
-    height: auto;
-  }
-
-  /* slightly smaller text for phones */
-  h1 {
-    font-size: 2rem;
-  }
-
-  .text-container p {
-    font-size: 1rem;
-  }
-}
