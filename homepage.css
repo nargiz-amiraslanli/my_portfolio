@@ -238,3 +238,18 @@ header {
   flex: 1;
 }
 
+
+
+.nav-links img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    display: block;
+  }
+  
+  /* optional: remove extra padding on icon links */
+  .nav-links a {
+    padding: 0;
+    background-color: transparent;
+  }
+
