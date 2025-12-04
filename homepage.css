@@ -238,8 +238,6 @@ header {
   flex: 1;
 }
 
-
-
 .nav-links img {
     width: 35px;
     height: 35px;
@@ -252,4 +250,3 @@ header {
     padding: 0;
     background-color: transparent;
   }
-
