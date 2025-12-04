@@ -17,34 +17,39 @@
             <li><a href="projects.html"><strong>Projects</strong></a></li>
         </ul>
         
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li>
+                  <a href="https://www.linkedin.com/in/nargiz-amiraslanli-38a217249" target="_blank">
+                    <img src="Images/linkedin-svgrepo-com.png" alt="LinkedIn">
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/nargiz-amiraslanli" target="_blank">
+                    <img src="Images/github-b&w.png" alt="GitHub">
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/n_amiraslanli" target="_blank">
+                    <img src="Images/Instagram-Logo-Black-And-White-PNG-Pic.png" alt="Instagram">
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/nargiz.amiraslanli.2025" target="_blank">
+                    <img src="Images/black-facebook-icon-19.png" alt="Facebook">
+                  </a>
+                </li>
+                <li>
+                    <a href="https://www.codecademy.com/profiles/namiraslanli12636" target="_blank">
+                      <img src="Images/codecademy-svgrepo-com.png" alt="Codecademy">
+                    </a>
+                </li>
+            </ul>
 
-        <ul class="nav-links">
-            <li>
-              <a href="https://www.linkedin.com/in/nargiz-amiraslanli-38a217249" target="_blank">
-                <img src="Images/linkedin-logo.png" alt="LinkedIn">
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/nargiz-amiraslanli" target="_blank">
-                <img src="Images/github-b&w.png" alt="GitHub">
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/n_amiraslanli" target="_blank">
-                <img src="Images/Instagram-Logo-Black-And-White-PNG-Pic.png" alt="Instagram">
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/nargiz.amiraslanli.2025" target="_blank">
-                <img src="Images/black-facebook-icon-19.png" alt="Facebook">
-              </a>
-            </li>
-            <li>
-                <a href="https://www.codecademy.com/profiles/namiraslanli12636" target="_blank">
-                  <img src="Images/codecademy-logos.png" alt="Codecademy">
-                </a>
-              </li>
-        </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                Dark
+            </button>
+        </div>
 
     </nav>
 
@@ -67,7 +72,39 @@
         
             lastScroll = currentScroll;
         });
-        </script>
+
+        // Dark mode toggle
+        const body = document.body;
+        const themeToggle = document.getElementById('theme-toggle');
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const isDark = body.getAttribute('data-theme') === 'dark';
+
+                if (isDark) {
+                    body.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                    themeToggle.textContent = 'Dark';
+                } else {
+                    body.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    themeToggle.textContent = 'Light';
+                }
+            });
+
+            // Set initial button text
+            if (body.getAttribute('data-theme') === 'dark') {
+                themeToggle.textContent = 'Light';
+            } else {
+                themeToggle.textContent = 'Dark';
+            }
+        }
+    </script>
 
 
     <section>
@@ -129,4 +166,3 @@
 
 </body>
 </html>
-
