@@ -13,6 +13,21 @@
 }
 
 
+/* Dark mode variables override when enabled */
+body[data-theme="dark"] {
+    --base-color: #121212;
+    --text-color: #f5f5f5;
+    --primary-color: #ff9edb;
+    --secondary-color: #b5b5fa;
+    --color-1: #1e1e1e;
+    --color-2: #222222;
+    --color-3: #262626;
+
+    background-color: #121212;
+    background-image: none;
+}
+
+
 
 * {
     margin: 0;
@@ -27,6 +42,10 @@ html {
     color: var(--text-color);
 }
 
+body {
+    color: var(--text-color);
+}
+
 
 
 h1, h2, h3 {
@@ -38,7 +57,7 @@ h1, h2, h3 {
 
 
 body {
-    background-image: url("Images/cute-pink-plaid-print-plaid-print-pink-plaid-background-picnic-background-checkered-background_405506-407.avif");
+    background-image: url("images/cute-pink-plaid-print-plaid-print-pink-plaid-background-picnic-background-checkered-background_405506-407.avif");
     background-size: cover;         /* Image always fills the screen */
     background-position: center;    /* Keep the main part centered */
     background-repeat: no-repeat;   /* No repeating tiles */
@@ -101,8 +120,16 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;       
+    display: flex;
     gap: 15px;
+}
+
+/* right side group (social icons + toggle) */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
 }
 
 /* Links */
@@ -121,6 +148,32 @@ body {
     color: #000;
 }
 
+/* dark mode tweaks */
+body[data-theme="dark"] .navbar {
+    background-color: rgba(47, 46, 46, 0.829); /* match section color */
+}
+
+/* navbar text white in dark mode */
+body[data-theme="dark"] .navbar a {
+    color: #ffffff;
+}
+
+body[data-theme="dark"] .navbar a:hover {
+    background-color: rgba(255, 206, 214, 0.3); /* lighter pink hover in dark mode */
+    color: #ffffff;
+}
+
+/* make social media logos visible in dark mode */
+body[data-theme="dark"] .nav-links img {
+    filter: brightness(0) invert(1); /* makes dark logos white/visible */
+}
+
+/* make sections more visible in dark mode */
+body[data-theme="dark"] section,
+body[data-theme="dark"] header > .flex-container {
+    background-color: rgba(47, 46, 46, 0.829); /* lighter gray, more visible but not completely opaque */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* subtle border for definition */
+}
 
 header > .flex-container, section {
     margin: 2em auto;
@@ -139,7 +192,7 @@ header > .flex-container, section {
 }
 
 
-header img {
+header > .flex-container img {
     max-width: 100%;
     border-radius: 1em;
     object-fit: cover;
@@ -223,6 +276,11 @@ h1 {
     text-decoration: underline;
   }
 
+  body[data-theme="dark"] .site-footer {
+    background-color: #201f1fe1;
+    color: #f959d1; /* keep pink text in dark mode */
+  }
+
 body {
   height: 100%;
 }
@@ -252,6 +310,22 @@ header {
     padding: 0;
     background-color: transparent;
   }
+
+.theme-toggle {
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: #ffffff;
+  cursor: pointer;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.theme-toggle:hover {
+  background-color: #ffb4ea;
+}
 
 
   @media (max-width: 768px) {
